@@ -9,6 +9,12 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
+# Don't use ^D to exit
+set -o ignoreeof
+
+# Vi key bindings
+set -o vi
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 
