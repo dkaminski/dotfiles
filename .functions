@@ -197,3 +197,13 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+function expandarglistforwikigrep() {
+    for w in $@; do echo -n " -e $w"; done
+}
+
+function wikig() {
+    cd ~/src/scratch/tiltodo.wiki
+    git gr `expandarglistforwikigrep $@`
+    cd -
+}

@@ -71,6 +71,10 @@
 	# Find commits by commit message
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
+    # Better grep defaults
+    grep = "!git grep -Ii -C 2 $2"
+    gr = grep --break --heading --line-number -Ii --all-match
+
 	# Remove branches that have already been merged with master
 	# a.k.a. ‘delete merged’
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
@@ -135,6 +139,9 @@
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
+
+[color "grep"]
+    filename = yellow bold
 
 [color "branch"]
 
