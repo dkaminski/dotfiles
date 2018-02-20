@@ -1,8 +1,13 @@
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
 
+# Use Tab to cycle through options
+#TAB: menu-complete
+#"\e[Z": menu-complete-backward
+
 # List all matches in case multiple possible completions are possible
-set show-all-if-ambiguous on
+# Commented out so that completion list is displayed only after 2nd TAB
+#set show-all-if-ambiguous on
 
 # Immediately add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
